@@ -17,6 +17,7 @@ html {
   color: var(--color);
   box-sizing: border-box;
 }
+
 body {
   background: var(--background);
 }
@@ -55,6 +56,7 @@ main {
   margin-bottom: 30px;
   display: flex;
   flex-flow: column;
+  gap: 40px;
   form {
     gap: 10px;
     .input {
@@ -90,6 +92,15 @@ main {
       padding-right: 10px;
       border-right: 10px solid var(--background-nav);
       border-radius: 5px;
+    }
+  }
+  .countries {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    .cards {
+      background-color: var(--background-nav);
     }
   }
 }

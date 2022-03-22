@@ -68,6 +68,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  gap: 40px;
 }
 main form {
   gap: 10px;
@@ -112,6 +113,18 @@ main form select {
   padding-right: 10px;
   border-right: 10px solid var(--background-nav);
   border-radius: 5px;
+}
+main .countries {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+main .countries .cards {
+  background-color: var(--background-nav);
 }
 
 @media (max-width: 580px) {

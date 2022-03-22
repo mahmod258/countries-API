@@ -1,4 +1,6 @@
-function Main() {
+import Country from "./country";
+import { useState } from "react";
+function Main({ data }) {
   return (
     <main>
       <form className="head d-flex justify-content-between">
@@ -20,7 +22,11 @@ function Main() {
           <option value="Oceania">Oceania</option>
         </select>
       </form>
-      <div className="countries"></div>
+      <div className="countries">
+        {data.map((arr) => (
+          <Country data={arr} />
+        ))}
+      </div>
     </main>
   );
 }

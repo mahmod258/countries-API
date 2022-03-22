@@ -14,6 +14,12 @@ html {
   font-family: "Nunito Sans", sans-serif;
 }
 
+* {
+  color: var(--color);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   background: var(--background);
 }
@@ -27,7 +33,7 @@ nav {
           box-shadow: 0px 0.1px 10px -3px black;
 }
 nav div {
-  margin: auto 20px;
+  margin: auto 70px;
 }
 nav div p {
   color: var(--color);
@@ -49,4 +55,117 @@ nav div button svg {
 nav div button p {
   margin: 0;
   font-size: 14px;
+}
+
+main {
+  margin: auto 70px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+main form {
+  gap: 10px;
+}
+main form .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
+  background-color: var(--background-nav);
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 10px;
+  border-radius: 5px;
+  width: 400px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main form .input svg {
+  width: 20px;
+  fill: var(--color);
+}
+main form .input input {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  height: 50px;
+  width: 90%;
+}
+main form select {
+  background-color: var(--background-nav);
+  border: 0;
+  outline: 0;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 10px solid var(--background-nav);
+  border-radius: 5px;
+}
+
+@media (max-width: 580px) {
+  nav div {
+    margin: auto 15px;
+  }
+
+  main {
+    margin: auto 15px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+  }
+  main form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 30px;
+  }
+  main form .input {
+    width: 100%;
+  }
+  main form .input input {
+    width: 90%;
+  }
+  main form .input svg {
+    width: 30px;
+  }
+  main form select {
+    background-color: var(--background-nav);
+    border: 0;
+    outline: 0;
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 10px solid var(--background-nav);
+  }
+}
+@media (max-width: 680px) {
+  main {
+    margin: auto 30px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+  }
+  main form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    gap: 20px;
+  }
 }

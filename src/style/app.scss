@@ -13,6 +13,10 @@ html {
   padding: 0;
   font-family: $font;
 }
+* {
+  color: var(--color);
+  box-sizing: border-box;
+}
 body {
   background: var(--background);
 }
@@ -23,7 +27,7 @@ nav {
   background-color: var(--background-nav);
   box-shadow: 0px 0.1px 10px -3px black;
   div {
-    margin: auto 20px;
+    margin: auto 70px;
     p {
       color: var(--color);
       font-weight: 600;
@@ -42,6 +46,98 @@ nav {
         margin: 0;
         font-size: 14px;
       }
+    }
+  }
+}
+main {
+  margin: auto 70px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-flow: column;
+  form {
+    gap: 10px;
+    .input {
+      display: flex;
+      flex-flow: row-reverse;
+      background-color: var(--background-nav);
+      padding-left: 20px;
+      padding-right: 20px;
+      gap: 10px;
+      border-radius: 5px;
+      width: 400px;
+      justify-content: space-between;
+      svg {
+        width: 20px;
+        fill: var(--color);
+      }
+      input {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        height: 50px;
+        width: 90%;
+      }
+    }
+    select {
+      background-color: var(--background-nav);
+      border: 0;
+      outline: 0;
+      width: 200px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-right: 10px solid var(--background-nav);
+      border-radius: 5px;
+    }
+  }
+}
+@media (max-width: 580px) {
+  nav {
+    div {
+      margin: auto 15px;
+    }
+  }
+  main {
+    margin: auto 15px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+    form {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      .input {
+        width: 100%;
+        input {
+          width: 90%;
+        }
+        svg {
+          width: 30px;
+        }
+      }
+      select {
+        background-color: var(--background-nav);
+        border: 0;
+        outline: 0;
+        width: 200px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 10px solid var(--background-nav);
+      }
+    }
+  }
+}
+@media (max-width: 680px) {
+  main {
+    margin: auto 30px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+    form {
+      flex-flow: column;
+      gap: 20px;
     }
   }
 }

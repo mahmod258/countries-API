@@ -2,7 +2,8 @@
 $font: "Nunito Sans", sans-serif;
 :root {
   --background: hsl(207, 26%, 17%);
-  --color: "white";
+  --background-nav: rgb(37, 54, 63);
+  --color: white;
 }
 body,
 html {
@@ -10,13 +11,37 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: $font;
 }
 body {
   background: var(--background);
 }
-.App {
-  .navi {
-    width: 100%;
-    box-shadow: 0px 0px 0px 0px black;
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-nav);
+  box-shadow: 0px 0.1px 10px -3px black;
+  div {
+    margin: auto 20px;
+    p {
+      color: var(--color);
+      font-weight: 600;
+    }
+    button {
+      display: flex;
+      background-color: transparent;
+      border: 0;
+      gap: 7px;
+      svg {
+        display: inline;
+        width: 15px;
+        fill: white;
+      }
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
   }
 }

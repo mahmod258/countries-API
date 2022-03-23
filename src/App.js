@@ -1,6 +1,7 @@
 import Main from "./components/main/Main";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Countryy from "./components/country/countryy";
 export default function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -14,6 +15,9 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main data={data} />} />
+          {data.map((arr, i) => {
+            <Route path={`/${arr.altSpellings[0]}`} element={<Countryy />} />;
+          })}
         </Routes>
       </BrowserRouter>
     </>

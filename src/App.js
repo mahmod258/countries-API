@@ -1,6 +1,6 @@
-import Navbar from "./components/navbar/navbar";
-import Main from "./components/main/main";
+import Main from "./components/main/Main";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -11,8 +11,11 @@ export default function App() {
   // console.log(data);
   return (
     <>
-      <Navbar />
-      <Main data={data} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main data={data} />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

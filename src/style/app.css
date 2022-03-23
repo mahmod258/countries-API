@@ -133,6 +133,9 @@ main .countries .cards {
   height: 100%;
   border-radius: 5px;
 }
+main .countries .cards a {
+  text-decoration: none;
+}
 main .countries .cards img {
   width: 100%;
   height: 50%;
@@ -147,16 +150,16 @@ main .countries .cards ul {
 main .countries .cards ul li {
   font-size: 17.5px;
   padding-bottom: 5px;
+  font-weight: 300;
 }
 main .countries .cards ul li span {
   font-weight: 800;
 }
-main .countries .cards a {
+main .countries .cards p {
   padding-left: 10px;
   font-weight: 800;
   color: var(--color);
   font-size: 20px;
-  text-decoration: none;
 }
 
 @media (max-width: 580px) {
@@ -202,8 +205,8 @@ main .countries .cards a {
 }
 @media (max-width: 680px) {
   main {
-    margin: auto 30px;
-    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   main form {
     -webkit-box-orient: vertical;

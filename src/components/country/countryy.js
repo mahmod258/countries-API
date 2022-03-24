@@ -1,4 +1,11 @@
-function Countryy() {
-  return <p>ss</p>;
+import Navbar from "../navbar/navbar";
+import MainCountry from "../main/mainCountry";
+function Countryy({ data }) {
+  return (
+    <>
+      <Navbar />
+      <MainCountry data={data} />
+    </>
+  );
 }
 export default Countryy;

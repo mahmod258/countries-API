@@ -1,0 +1,31 @@
+:root {
+  --background: hsl(207, 26%, 17%);
+  --background-nav: rgb(37, 54, 63);
+  --color: white;
+}
+.main-country {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  button {
+    background-color: var(--background-nav);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: 0;
+    svg {
+      width: 17.5px;
+      transform: rotate(180deg);
+      margin-right: 5px;
+    }
+  }
+  > div {
+    margin-top: 75px;
+    img {
+      width: 40vw;
+    }
+  }
+}

@@ -14,10 +14,16 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main data={data} />} />
           {data.map((arr, i) => {
-            <Route path={`/${arr.altSpellings[0]}`} element={<Countryy />} />;
+            return (
+              <Route
+                key={i}
+                path={`/${arr.name.common}`}
+                element={<Countryy data={arr} />}
+              />
+            );
           })}
+          <Route path="/" element={<Main data={data} />} />
         </Routes>
       </BrowserRouter>
     </>

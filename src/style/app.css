@@ -5,6 +5,40 @@
   --color: white;
 }
 
+.main-country {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.main-country button {
+  background-color: var(--background-nav);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 0;
+}
+.main-country button svg {
+  width: 17.5px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-right: 5px;
+}
+.main-country > div {
+  margin-top: 75px;
+}
+.main-country > div img {
+  width: 40vw;
+}
+
+:root {
+  --background: hsl(207, 26%, 17%);
+  --background-nav: rgb(37, 54, 63);
+  --color: white;
+}
+
 body,
 html {
   width: 100%;
@@ -53,7 +87,7 @@ nav div button {
 nav div button svg {
   display: inline;
   width: 15px;
-  fill: white;
+  fill: var(--color);
 }
 nav div button p {
   margin: 0;
@@ -132,6 +166,8 @@ main .countries .cards {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  -webkit-box-shadow: 0.1px 0px 15px -5px black;
+          box-shadow: 0.1px 0px 15px -5px black;
 }
 main .countries .cards a {
   text-decoration: none;
@@ -157,6 +193,8 @@ main .countries .cards ul li span {
 }
 main .countries .cards p {
   padding-left: 10px;
+  margin-bottom: 0 !important;
+  margin-top: 20px !important;
   font-weight: 800;
   color: var(--color);
   font-size: 20px;
@@ -169,7 +207,6 @@ main .countries .cards p {
 
   main {
     margin: auto 5px;
-    margin-top: 80px;
     margin-bottom: 15px;
   }
   main form {

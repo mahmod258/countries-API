@@ -6,10 +6,10 @@
 }
 
 .main-country {
-  margin-top: 50px;
-  margin-bottom: 50px;
   padding-left: 50px;
   padding-right: 50px;
+  margin-top: 40px;
+  padding-bottom: 50px;
 }
 .main-country button {
   background-color: var(--background-nav);
@@ -27,12 +27,80 @@
   margin-right: 5px;
 }
 .main-country > div {
-  margin-top: 75px;
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main-country > div > div {
+  width: 100%;
+  height: 100%;
+  padding-left: 4vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.main-country > div > div h1 {
+  font-weight: 800;
+  margin-left: 27px;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+.main-country > div .details ul {
+  list-style: none;
+}
+.main-country > div .details ul li {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+.main-country > div .details ul li span {
+  font-weight: 600;
 }
 .main-country > div img {
-  width: 40vw;
+  width: 42.5vw;
+  min-height: 100%;
+}
+.main-country > div .borders {
+  gap: 15px;
+  margin-left: 27px;
+  margin-top: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 500px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.main-country > div .borders p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
 }
 
+@media (min-width: 1600px) {
+  .main-country button {
+    font-size: 30px;
+  }
+  .main-country button svg {
+    width: 30px;
+    margin-right: 10px;
+  }
+  .main-country > div h1 {
+    font-size: 40px !important;
+  }
+  .main-country > div ul li {
+    font-size: 25px !important;
+  }
+  .main-country .borders p {
+    font-size: 25px !important;
+  }
+  .main-country .borders button {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
 :root {
   --background: hsl(207, 26%, 17%);
   --background-nav: rgb(37, 54, 63);
@@ -60,6 +128,25 @@ html {
 
 body {
   background: var(--background);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body .main-country {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 0;
+}
+body nav {
+  width: 100vw;
 }
 
 nav {
@@ -251,5 +338,22 @@ main .countries .cards p {
         -ms-flex-flow: column;
             flex-flow: column;
     gap: 20px;
+  }
+}
+@media (min-width: 1600px) {
+  nav > div {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+  nav > div p {
+    font-size: 25px;
+  }
+  nav > div button p {
+    font-size: 25px;
+  }
+  nav > div button svg {
+    width: 27px;
   }
 }

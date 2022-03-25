@@ -18,7 +18,7 @@ export default function App() {
             return (
               <Route
                 key={i}
-                path={`/${arr.name.common}`}
+                path={`/${arr.name.common.split(" ").join("")}`}
                 element={<Countryy data={arr} />}
               />
             );

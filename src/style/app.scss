@@ -24,6 +24,17 @@ html {
 body {
   background: var(--background);
 }
+body {
+  display: flex;
+  flex-direction: column;
+  .main-country {
+    justify-content: center;
+    margin-right: 0;
+  }
+  nav {
+    width: 100vw;
+  }
+}
 nav {
   width: 100%;
   background-color: var(--background-nav);
@@ -184,6 +195,28 @@ main {
     form {
       flex-flow: column;
       gap: 20px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  nav {
+    > div {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+      padding-left: 50px !important;
+      padding-right: 50px !important;
+      p {
+        font-size: 25px;
+      }
+      button {
+        p {
+          font-size: 25px;
+        }
+        svg {
+          width: 27px;
+        }
+      }
     }
   }
 }

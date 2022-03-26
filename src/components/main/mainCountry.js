@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
-function MainCountry({ data }) {
-  //   console.log(data.name.nativeName);
-  const nativeName = Object.keys(data.name.nativeName);
-  const lang = Object.keys(nativeName);
-  //   console.log(lang);
+import { useState } from "react";
+function MainCountry({ data, bigData }) {
+  const lang = Object.keys(data.languages);
+  const FiltredBorders = data.borders.filter((coun) => {
+    for (let i = 0; i < bigData.length; i++) {
+      if (coun === bigData[i].cca3) {
+        return true;
+      }
+    }
+    return false;
+  });
   return (
     <div className="main-country">
       <Link to="/">
@@ -30,11 +36,11 @@ function MainCountry({ data }) {
         <img src={data.flags.svg} alt="" />
         <div>
           <h1>{data.name.common}</h1>
-          <div className="details d-flex justify-content-between">
+          <div className="details d-flex">
             <ul>
               <li>
                 <span>Name:</span>
-                {" " + data.name.nativeName.eng.official}
+                {" " + data.altSpellings[2]}
               </li>
               <li>
                 <span>Population:</span> {" " + data.population}
@@ -60,13 +66,19 @@ function MainCountry({ data }) {
               </li>
             </ul>
           </div>
-          <div className="borders d-flex align-items-center">
+          <div className="borders d-flex align-items-center flex-wrap">
             <p>Border Countries: </p>
-            {data.borders !== undefined
-              ? data.borders.map((country, i) => {
-                  return <button key={i}>{country}</button>;
-                })
-              : null}
+            {data.borders !== undefined ? (
+              data.borders.map((country, i) => {
+                return (
+                  <Link to={`/${FiltredBorders[i]}`}>
+                    <button key={i}>{country}</button>
+                  </Link>
+                );
+              })
+            ) : (
+              <p>No Countries</p>
+            )}
           </div>
         </div>
       </div>

@@ -4,8 +4,9 @@
   --color: white;
 }
 .main-country {
-  padding-left: 50px;
-  padding-right: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 40px;
   margin-top: 40px;
   padding-bottom: 50px;
   button {
@@ -26,51 +27,116 @@
     margin-top: 100px;
     display: flex;
     justify-content: space-between;
+    gap: 4vw;
     > div {
       width: 100%;
       height: 100%;
-      padding-left: 4vw;
       align-self: center;
       h1 {
         font-weight: 800;
-        margin-left: 27px;
         margin-bottom: 25px;
-        font-size: 30px;
+        font-size: 35px;
+        margin-left: 25px;
       }
     }
     .details {
+      justify-content: start !important;
+      padding: 0 !important;
+      gap: 7.5vw;
       ul {
         list-style: none;
         li {
           margin-bottom: 15px;
-          font-size: 15px;
+          font-size: 80%;
+          width: 100%;
           span {
-            font-weight: 600;
+            font-weight: 800;
           }
         }
       }
     }
     img {
-      width: 42.5vw;
-      min-height: 100%;
+      width: 50%;
     }
     .borders {
       gap: 15px;
-      margin-left: 27px;
-      margin-top: 40px;
+      margin-left: 32px;
+      p {
+        margin: 0;
+        white-space: pre;
+      }
+      gap: 15px;
       padding-left: 5px;
       padding-right: 5px;
-      width: 500px;
+      width: 100%;
       flex-wrap: wrap;
       p {
         font-size: 18px;
         font-weight: 600;
         margin: 0;
       }
+      button {
+        font-size: 15px;
+        width: 100px;
+        box-shadow: 0px 0px 2.5px 0px black;
+      }
     }
   }
 }
-@media (min-width: 1600px) {
+@media (max-width: 900px) {
+  .main-country {
+    padding-right: 50px;
+    padding-left: 50px;
+    > div {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      gap: 40px;
+      img {
+        width: 100%;
+      }
+      > div {
+        h1 {
+          margin: 0;
+          margin-bottom: 15px;
+        }
+        .details {
+          gap: 0;
+          justify-content: space-between !important;
+          ul {
+            padding-left: 0 !important;
+            li {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .main-country {
+    padding-left: 10px;
+    padding-right: 10px;
+    > div {
+      img {
+      }
+      > div {
+        .details {
+          flex-direction: column;
+          gap: 20px;
+
+          ul {
+            li {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1700px) {
   .main-country {
     button {
       font-size: 30px;

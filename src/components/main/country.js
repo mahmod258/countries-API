@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function Country({ data }) {
   return (
     <div className=" cards">
-      <Link to={`/${data.name.common.split(" ").join("")}`}>
+      <Link to={`/${data.cca3}`}>
         <img className="card-img-top" src={data.flags.svg} />
         <div className="card-body">
           <p>{data.name.common}</p>

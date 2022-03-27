@@ -21,6 +21,8 @@
   padding-bottom: 5px;
   border-radius: 5px;
   border: 0;
+  -webkit-box-shadow: 0px 0px 10px -4px black;
+          box-shadow: 0px 0px 10px -4px black;
 }
 .main-country button svg {
   width: 17.5px;
@@ -29,7 +31,7 @@
   margin-right: 5px;
 }
 .main-country > div {
-  margin-top: 100px;
+  margin-top: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +65,7 @@
 }
 .main-country > div .details ul li {
   margin-bottom: 15px;
-  font-size: 80%;
+  font-size: 90%;
   width: 100%;
 }
 .main-country > div .details ul li span {
@@ -94,8 +96,8 @@
 .main-country > div .borders button {
   font-size: 15px;
   width: 100px;
-  -webkit-box-shadow: 0px 0px 2.5px 0px black;
-          box-shadow: 0px 0px 2.5px 0px black;
+  -webkit-box-shadow: 0px 0px 10px -4px black;
+          box-shadow: 0px 0px 10px -4px black;
 }
 
 @media (max-width: 900px) {
@@ -326,6 +328,7 @@ main .countries .cards {
   border-radius: 5px;
   -webkit-box-shadow: 0.1px 0px 15px -5px black;
           box-shadow: 0.1px 0px 15px -5px black;
+  max-width: 32rem;
 }
 main .countries .cards a {
   text-decoration: none;

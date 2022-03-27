@@ -5,7 +5,7 @@ export default function Country({ data }) {
       <Link to={`/${data.cca3}`}>
         <img className="card-img-top" src={data.flags.svg} />
         <div className="card-body">
-          <p>{data.name.common}</p>
+          <p>{data.name}</p>
           <ul>
             <li>
               <span>Population: </span>

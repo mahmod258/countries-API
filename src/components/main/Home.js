@@ -1,11 +1,20 @@
 import Country from "./country";
 import { useState } from "react";
-function Home({ data }) {
+function Home({ data, func }) {
+  const [target, setTarget] = useState("/all");
   return (
     <main>
-      <form className="head d-flex justify-content-between">
+      <form
+        className="head d-flex justify-content-between"
+        onSubmit={(e) => {
+          setTimeout(() => func(`/name/${e.target[0].value}`), 0);
+
+          console.log(e.target[0].value);
+          e.preventDefault();
+        }}
+      >
         <div className="input">
-          <input type="text" placeholder="Choose Your Country" />
+          <input type="text" placeholder="Search Your Country" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="ionicon"

@@ -17,6 +17,7 @@
     padding-bottom: 5px;
     border-radius: 5px;
     border: 0;
+    box-shadow: 0px 0px 10px -4px black;
     svg {
       width: 17.5px;
       transform: rotate(180deg);
@@ -24,7 +25,7 @@
     }
   }
   > div {
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-between;
     gap: 4vw;
@@ -47,7 +48,7 @@
         list-style: none;
         li {
           margin-bottom: 15px;
-          font-size: 80%;
+          font-size: 90%;
           width: 100%;
           span {
             font-weight: 800;
@@ -78,7 +79,7 @@
       button {
         font-size: 15px;
         width: 100px;
-        box-shadow: 0px 0px 2.5px 0px black;
+        box-shadow: 0px 0px 10px -4px black;
       }
     }
   }

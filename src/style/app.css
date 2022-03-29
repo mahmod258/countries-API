@@ -326,7 +326,7 @@ main .countries {
 }
 main .countries .cards {
   background-color: var(--background-nav);
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-box-shadow: 0.1px 0px 15px -5px black;
           box-shadow: 0.1px 0px 15px -5px black;
 }
@@ -338,6 +338,8 @@ main .countries .cards img {
   height: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 main .countries .cards ul {
   list-style: none;

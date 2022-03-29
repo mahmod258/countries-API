@@ -2,15 +2,18 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 function MainCountry({ data, bigData }) {
   const lang = Object.keys(data.languages[0]);
-  const FiltredBorders = data.borders.filter((coun) => {
-    for (let i = 0; i < bigData.length; i++) {
-      if (coun === bigData[i].alpha3Code) {
-        return true;
+  let FiltredBorders;
+  if (data.borders !== undefined) {
+    FiltredBorders = data.borders.filter((coun) => {
+      for (let i = 0; i < bigData.length; i++) {
+        if (coun === bigData[i].alpha3Code) {
+          return true;
+        }
       }
-    }
-    return false;
-  });
-  // console.log(data);
+      return false;
+    });
+  }
+  // console.log(data.borders);
   return (
     <div className="main-country">
       <Link to="/">

@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 import MainCountry from "./components/main/mainCountry";
 export default function App() {
-  const [target, setTarget] = useState(localStorage.getItem("target"));
+  const [target, setTarget] = useState(`/all`);
   const [data, setData] = useState([]);
   const [valid, setValid] = useState(true);
-  localStorage.setItem("target", "/all");
+  // localStorage.setItem("target", "/all");
   useEffect(() => {
-    fetch(`https://restcountries.com/v2${localStorage.getItem("target")}`)
+    fetch(`https://restcountries.com/v2${target}`)
       .then((response) => response.json())
       .then((data) => {
         setValid(true);
@@ -19,7 +19,7 @@ export default function App() {
         setValid(false);
         console.log(arr);
       });
-  });
+  }, []);
   // console.log(data[10]);
   // console.log(data);
 

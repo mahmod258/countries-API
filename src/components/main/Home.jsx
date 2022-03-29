@@ -25,7 +25,7 @@ function Home({ data, valid }) {
           // });
           console.log(e);
           console.log(e.target[0].value);
-          localStorage.target = e.target[0].value;
+          // localStorage.target = e.target[0].value;
           e.preventDefault();
         }}
       >

@@ -12,31 +12,34 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((arr) => {
-        setValid(false);
+        // setValid(false);
         console.log(arr);
       });
   });
-  // console.log(data);
+  // console.log(data[1]);
 
   return (
     <>
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          {data.map((arr, i) => {
-            return;
+      {valid === true ? (
+        <BrowserRouter>
+          <Routes>
+            {data.map((arr, i) => {
+              return (
+                <Route
+                  key={i}
+                  path={`/${data.alpha3Code}`}
+                  element={<MainCountry data={arr} bigData={data} />}
+                />
+              );
+            })}
             <Route
-              key={i}
-              path={`/${arr.cca3}`}
-              element={<MainCountry data={arr} bigData={data} />}
-            />;
-          })}
-          <Route
-            path="/"
-            element={<Home data={data} func={(value) => setTarget(value)} />}
-          />
-        </Routes>
-      </BrowserRouter>
+              path="/"
+              element={<Home data={data} func={(value) => setTarget(value)} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      ) : null}
     </>
   );
 }

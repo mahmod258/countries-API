@@ -7,10 +7,25 @@ function Home({ data, func }) {
       <form
         className="head d-flex justify-content-between"
         onSubmit={(e) => {
-          setTimeout(() => func(`/name/${e.target[0].value}`), 0);
-
-          console.log(e.target[0].value);
           e.preventDefault();
+          data.forEach((arr) => {
+            if (
+              [
+                arr.alpha2Code,
+                arr.alpha3Code,
+                arr.altSpellings[0],
+                arr.altSpellings[1],
+                arr.demonym,
+                arr.name,
+              ].includes(e.target[0].value)
+            ) {
+              setTimeout(() => func(`/name/${e.target[0].value}`), 0);
+              func(true);
+            } else {
+              func(false);
+            }
+          });
+          console.log(e);
         }}
       >
         <div className="input">

@@ -1,32 +1,16 @@
 import Country from "./country";
 import { useState } from "react";
-function Home({ data, valid }) {
-  const [target, setTarget] = useState(localStorage.getItem("target"));
+function Home({ data, valid, setTarget }) {
   return (
     <main>
       <form
         className="head d-flex justify-content-between"
         onSubmit={(e) => {
-          // data.forEach((arr) => {
-          //   if (
-          //     [
-          //       arr.alpha2Code,
-          //       arr.alpha3Code,
-          //       arr.altSpellings[0],
-          //       arr.altSpellings[1],
-          //       arr.demonym,
-          //       arr.name,
-          //     ].includes(e.target[0].value)
-          //   ) {
-          //     func(true);
-          //   } else {
-          //     func(false);
-          //   }
-          // });
-          console.log(e);
-          console.log(e.target[0].value);
-          // localStorage.target = e.target[0].value;
           e.preventDefault();
+          console.log(e);
+          setTimeout(() => {
+            setTarget(e.target[0].value);
+          }, 0);
         }}
       >
         <div className="input">
@@ -47,13 +31,11 @@ function Home({ data, valid }) {
           <option value="Oceania">Oceania</option>
         </select>
       </form>
-      {valid === true ? (
-        <div className="countries">
-          {data.map((arr, i) => (
-            <Country data={arr} key={i} />
-          ))}
-        </div>
-      ) : null}
+      <div className="countries">
+        {data.map((arr, i) => (
+          <Country data={arr} key={i} />
+        ))}
+      </div>
     </main>
   );
 }

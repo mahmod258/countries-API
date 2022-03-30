@@ -1,8 +1,8 @@
 import Country from "./country";
 import { useState } from "react";
 import useFetch from "../../customHooks/useFetch";
-function Home({ valid, setTarget, target }) {
-  let { data } = useFetch(`https://restcountries.com/v2`, target);
+function Home({ data, setTarget }) {
+  // let { data } = useFetch(`https://restcountries.com/v2`, target);
   // console.log(data);
   return (
     <main>

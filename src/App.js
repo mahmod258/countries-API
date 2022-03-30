@@ -10,7 +10,6 @@ export default function App() {
   const [target, setTarget] = useState(`/all`);
   useFetch(`https://restcountries.com/v2`, target);
   let { data } = useFetch(`https://restcountries.com/v2`, target);
-  console.log(data);
   return (
     <>
       <Navbar />

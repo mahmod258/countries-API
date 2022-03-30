@@ -1,6 +1,9 @@
 import Country from "./country";
 import { useState } from "react";
-function Home({ data, valid, setTarget }) {
+import useFetch from "../../customHooks/useFetch";
+function Home({ valid, setTarget, target }) {
+  let { data } = useFetch(`https://restcountries.com/v2`, target);
+  // console.log(data);
   return (
     <main>
       <form
@@ -9,7 +12,7 @@ function Home({ data, valid, setTarget }) {
           e.preventDefault();
           console.log(e);
           setTimeout(() => {
-            setTarget(e.target[0].value);
+            setTarget("/name/" + e.target[0].value);
           }, 0);
         }}
       >

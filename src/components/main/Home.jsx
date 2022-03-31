@@ -1,7 +1,7 @@
 import Country from "./country";
 import { useState } from "react";
 import useFetch from "../../customHooks/useFetch";
-function Home({ data, setTarget }) {
+function Home({ data, setTarget, valid }) {
   // let { data } = useFetch(`https://restcountries.com/v2`, target);
   // console.log(data);
   return (
@@ -17,6 +17,14 @@ function Home({ data, setTarget }) {
         }}
       >
         <div className="input">
+          {valid === false ? (
+            <p
+              className="m-0 align-self-center text-danger"
+              style={{ whiteSpace: "nowrap" }}
+            >
+              Country Not Found
+            </p>
+          ) : null}
           <input type="text" placeholder="Search Your Country" />
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -8,8 +8,7 @@ import React from "react";
 
 export default function App() {
   const [target, setTarget] = useState(`/all`);
-  useFetch(`https://restcountries.com/v2`, target);
-  let { data } = useFetch(`https://restcountries.com/v2`, target);
+  let { data, valid } = useFetch(`https://restcountries.com/v2`, target);
   return (
     <>
       <Navbar />
@@ -28,7 +27,11 @@ export default function App() {
           <Route
             path="/"
             element={
-              <Home data={data} setTarget={(value) => setTarget(value)} />
+              <Home
+                data={data}
+                valid={valid}
+                setTarget={(value) => setTarget(value)}
+              />
             }
           />
         </Routes>

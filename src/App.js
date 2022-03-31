@@ -8,7 +8,7 @@ import React from "react";
 
 export default function App() {
   const [target, setTarget] = useState(`/all`);
-  let { data, valid } = useFetch(`https://restcountries.com/v2`, target);
+  let { data, valid } = useFetch(`https://restcountries.com/v3.1`, target);
   return (
     <>
       <Navbar />
@@ -18,9 +18,8 @@ export default function App() {
             return (
               <Route
                 key={i}
-                path={`/${arr.alpha3Code}`}
+                path={`/${arr.cca3}`}
                 element={<MainCountry data={arr} bigData={data} />}
-                target={target}
               />
             );
           })}

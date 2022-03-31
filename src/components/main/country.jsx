@@ -3,10 +3,10 @@ export default function Country({ data }) {
   // console.log(data);
   return (
     <div className=" cards">
-      <Link to={`/${data.alpha3Code}`}>
+      <Link to={`/${data.cca3}`}>
         <img className="card-img-top" src={data.flags.svg} />
         <div className="card-body">
-          <p>{data.name}</p>
+          <p>{data.name.common}</p>
           <ul>
             <li>
               <span>Population: </span>

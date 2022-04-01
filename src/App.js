@@ -9,6 +9,7 @@ import React from "react";
 export default function App() {
   const [target, setTarget] = useState(`/all`);
   let { data, valid } = useFetch(`https://restcountries.com/v3.1`, target);
+  // console.log(data);
   return (
     <>
       <Navbar />

@@ -2,16 +2,17 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 function MainCountry({ data, bigData }) {
   const lang = Object.keys(data.languages);
+  let filtredBorders = [];
   if (data.borders !== undefined) {
-    let FiltredBorders = data.borders.filter((coun) => {
-      for (let i = 0; i < bigData.length; i++) {
-        if (coun === bigData[i].alpha3Code) {
-          return true;
+    for (let i = 0; i < data.borders.length; i++) {
+      bigData.forEach((country) => {
+        if (country.cca3 === data.borders[i]) {
+          filtredBorders.push(country);
         }
-      }
-      return false;
-    });
+      });
+    }
   }
+  console.log(filtredBorders);
   return (
     <div className="main-country">
       <Link to="/">
@@ -71,10 +72,10 @@ function MainCountry({ data, bigData }) {
           <div className="borders d-flex align-items-center flex-wrap">
             <p>Border Countries: </p>
             {data.borders !== undefined ? (
-              data.borders.map((country, i) => {
+              filtredBorders.map((country, i) => {
                 return (
-                  <Link to={`/${FiltredBorders[0].cca3}`}>
-                    <button key={i}>{country}</button>
+                  <Link to={`/${country.cca3}`}>
+                    <button key={i}>{country.cca3}</button>
                   </Link>
                 );
               })

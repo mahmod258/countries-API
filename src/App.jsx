@@ -16,20 +16,19 @@ export default function App() {
       {/* {data.map((arr, i) => {
         return <MainCountry data={arr} bigData={data} />;
       })} */}
-      <h1>sdgvffffffffff</h1>
       <BrowserRouter>
         <Routes>
           {data.map((arr, i) => {
             return (
               <Route
                 key={i}
-                path={`/${arr.cca3}`}
+                path={`/countries-API/${arr.cca3}`}
                 element={<MainCountry data={arr} bigData={data} />}
               />
             );
           })}
           <Route
-            path="/"
+            path="/countries-API/"
             element={
               <Home
                 data={data}

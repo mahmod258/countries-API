@@ -15,7 +15,7 @@ function MainCountry({ data, bigData }) {
   console.log(filtredBorders);
   return (
     <div className="main-country">
-      <Link to="/">
+      <Link to="/countries-API/">
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ function MainCountry({ data, bigData }) {
             {data.borders !== undefined ? (
               filtredBorders.map((country, i) => {
                 return (
-                  <Link to={`/${country.cca3}`}>
+                  <Link to={`/countries-API/${country.cca3}`}>
                     <button key={i}>{country.cca3}</button>
                   </Link>
                 );

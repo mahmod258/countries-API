@@ -25,7 +25,7 @@ export default function App() {
             );
           })}
           <Route
-            path="/"
+            path="/countries-API"
             element={
               <Home
                 data={data}

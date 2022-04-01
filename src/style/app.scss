@@ -1,5 +1,5 @@
 @use "./country";
-// @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 $font: "Nunito Sans", sans-serif;
 :root {
   --background: hsl(207, 26%, 17%);
@@ -12,7 +12,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  // font-family: $font;
+  font-family: $font;
 }
 * {
   color: var(--color);

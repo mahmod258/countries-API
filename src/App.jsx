@@ -16,6 +16,7 @@ export default function App() {
       {/* {data.map((arr, i) => {
         return <MainCountry data={arr} bigData={data} />;
       })} */}
+      <h1>sdgvffffffffff</h1>
       <BrowserRouter>
         <Routes>
           {data.map((arr, i) => {

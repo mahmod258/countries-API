@@ -13,9 +13,12 @@ export default function App() {
   return (
     <>
       <Navbar />
+      {data.map((arr, i) => {
+        return <MainCountry data={arr} bigData={data} />;
+      })}
       <BrowserRouter>
         <Routes>
-          {data.map((arr, i) => {
+          {/* {data.map((arr, i) => {
             return (
               <Route
                 key={i}
@@ -23,7 +26,7 @@ export default function App() {
                 element={<MainCountry data={arr} bigData={data} />}
               />
             );
-          })}
+          })} */}
           <Route
             path="/"
             element={

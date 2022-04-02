@@ -5,6 +5,7 @@ function MainCountry({ data, bigData }) {
   const navigate = useNavigate();
   window.onload = () => {
     navigate("/countries-API/");
+    console.log("hello");
   };
   const lang = Object.keys(data.languages);
   let filtredBorders = [];

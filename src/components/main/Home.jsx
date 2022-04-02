@@ -8,6 +8,7 @@ function Home({ data, setTarget, valid }) {
   const navigate = useNavigate();
   window.onload = () => {
     navigate("/countries-API/");
+    console.log("hello");
   };
   return (
     <main>

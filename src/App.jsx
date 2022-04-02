@@ -1,6 +1,11 @@
 import Home from "./components/main/Home";
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 import MainCountry from "./components/main/mainCountry";
 import useFetch from "./customHooks/useFetch";
@@ -13,20 +18,19 @@ export default function App() {
   return (
     <>
       <Navbar />
-
-      <BrowserRouter>
+      <Router>
         <Routes>
           {data.map((arr, i) => {
             return (
               <Route
                 key={i}
-                path={`/countries-API/${arr.cca3}`}
+                path={`/${arr.cca3}/`}
                 element={<MainCountry data={arr} bigData={data} />}
               />
             );
           })}
           <Route
-            path="/countries-API/"
+            path="/"
             element={
               <Home
                 data={data}
@@ -36,7 +40,7 @@ export default function App() {
             }
           />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }

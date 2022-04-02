@@ -3,7 +3,7 @@ export default function Country({ data }) {
   // console.log(data);
   return (
     <div className=" cards">
-      <Link to={`/countries-API/${data.cca3}`}>
+      <Link to={`/${data.cca3}`}>
         <img className="card-img-top" src={data.flags.svg} />
         <div className="card-body">
           <p>{data.name.common}</p>

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 function MainCountry({ data, bigData }) {
   const navigate = useNavigate();
-  window.onload = () => {
+  useEffect(() => {
     navigate("/countries-API/");
     console.log("hello");
-  };
+  });
   const lang = Object.keys(data.languages);
   let filtredBorders = [];
   if (data.borders !== undefined) {

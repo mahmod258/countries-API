@@ -1,9 +1,14 @@
 import Country from "./country";
 import { useState } from "react";
 import useFetch from "../../customHooks/useFetch";
+import { useNavigate } from "react-router-dom";
 function Home({ data, setTarget, valid }) {
   // let { data } = useFetch(`https://restcountries.com/v2`, target);
   // console.log(data);
+  const navigate = useNavigate();
+  window.onload = () => {
+    navigate("/countries-API/");
+  };
   return (
     <main>
       <form

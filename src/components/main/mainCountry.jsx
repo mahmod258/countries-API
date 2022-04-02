@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function MainCountry({ data, bigData }) {
+  const navigate = useNavigate();
+  window.onload = () => {
+    navigate("/countries-API/");
+  };
   const lang = Object.keys(data.languages);
   let filtredBorders = [];
   if (data.borders !== undefined) {

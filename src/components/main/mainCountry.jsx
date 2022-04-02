@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 function MainCountry({ data, bigData }) {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/countries-API/");
+    navigate(window.location.pathname);
     console.log("hello");
-  });
+  }, []);
   const lang = Object.keys(data.languages);
   let filtredBorders = [];
   if (data.borders !== undefined) {

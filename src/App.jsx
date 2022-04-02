@@ -13,9 +13,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      {/* {data.map((arr, i) => {
-        return <MainCountry data={arr} bigData={data} />;
-      })} */}
+
       <BrowserRouter>
         <Routes>
           {data.map((arr, i) => {
